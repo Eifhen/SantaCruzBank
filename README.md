@@ -10,4 +10,4 @@ Tecnologías utilizadas:
 - HTML5
 - CSS3
 - Javascript
-  -SplideJS (https://splidejs.com)
+  - SplideJS (https://splidejs.com)
