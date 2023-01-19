@@ -1,0 +1,626 @@
+@media(min-width:761px){
+
+    body {
+        background-color: var(--white);
+    }
+
+    /*****************************************
+        Logo
+    *****************************************/
+        .logo-container {
+            width:auto;
+        }
+
+        .logo {
+           width: 155px;
+           height: 60px;
+           
+        }
+
+    /*****************************************
+        Grid
+    *****************************************/
+
+    .grid {
+        display:grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        grid-template-rows: 
+            minmax(100vh, auto) /* hero */
+            minmax(100vh, auto) /* servicios */
+            minmax(35vh, auto)  /* banner */
+            minmax(100vh,auto)  /* noticias */
+            minmax(70vh, auto)  /* certificaciones */
+            minmax(20vh, auto); /* footer */
+        grid-template-areas: 
+            "hero hero hero" 
+            "servicios servicios servicios" 
+            "banner banner banner" 
+            "noticias noticias noticias" 
+            "certificaciones certificaciones certificaciones" 
+            "footer footer footer";
+        font-family: 'Roboto', sans-serif;
+        position: relative;
+
+    }
+
+    /* .text-break:after {
+        content: "\a";
+        white-space: pre;
+    } */
+
+    /*****************************************
+        Header
+    *****************************************/
+
+    .header {
+        grid-area: header;
+        background-color: white;
+        width: 85%;
+        height:10vh;
+        padding: 2.3rem 1rem 2.3rem 1rem;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top:20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 3;
+        border-radius: 50px;
+        box-shadow: var(--shadow-bright);
+    }
+
+    .header .menu {
+        width:70%;
+    }
+
+    .header .menu .collapsable-menu {
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+
+    .header .menu .collapsable-menu i {
+        color: var(--blue-royal);
+        font-size: 1.7rem;
+        cursor:pointer;
+        display:none;
+        order:2;
+    }
+
+    .header .menu .collapsable-menu .collapsable-content {
+        display:block !important;
+        color: var(--blue-royal);
+        opacity: 0.9;
+        font-weight: 600;
+        order:1;
+    }
+
+    .header .menu .collapsable-menu .collapsable-content ul {
+        display:flex;
+        list-style: none;
+        margin:0;
+        padding:0;
+        gap: 2rem;
+    }
+
+    .header .menu .collapsable-menu .collapsable-content ul li h2 {
+        font-size: 1rem !important;
+    }
+
+    .header .menu .collapsable-menu .collapsable-content ul li a i {
+        display: none;
+    }
+
+    .header .menu .collapsable-menu .collapsable-content ul li a:hover, 
+    .header .menu .collapsable-menu .collapsable-content ul li a:focus {
+        color: var(--gray-dark);
+    }
+
+
+    /*****************************************
+        Hero
+    *****************************************/
+
+    .hero {
+        grid-area: hero;
+        padding: 0;
+        position: relative;
+    }
+
+    .hero .img {
+        object-fit: cover;
+        object-position: center;
+        background-color: gray;
+        height: 100vh;
+        width:100%;
+    }
+
+    .hero .mask {
+        height: 100vh;
+        width:100%;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.448);
+        position: absolute;
+        top:0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .hero .mask .content {
+        color: white;
+        text-align: center;
+    }
+
+    .hero .mask .content h1 {
+        font-size: 3.5rem;
+        font-weight: 200;
+        margin:0;
+        line-height: 0.8;
+        text-shadow: var(--text-shadow);
+        
+    }
+    
+    .hero .mask .content p {
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin:1rem 0 0 0;
+        color: var(--gray-light) !important;
+        text-shadow: var(--text-shadow);
+    }
+
+     /*****************************************
+        Servicios
+    *****************************************/
+
+    .servicios {
+        grid-area: servicios;
+        padding: 0 0 8rem 0;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        gap:4rem;
+        flex-direction: column;
+        border-bottom: 1px solid var(--gray-light);
+     
+    }
+
+     /* #1  SERVICIOS PRINCIPALES */
+
+    .servicios .servicios-principales {
+        height: 50vh;
+        width: 75px;
+        box-shadow: var(--shadow);
+    
+        background-color: var(--pure);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     
+        flex-direction: column;
+     
+        padding:0.5rem;
+        color:var(--blue-royal);
+        font-size: 0.6rem;
+        border-radius: 25px;
+        position: fixed;
+        top: 150px;
+        right: 20px;
+        z-index: 10;
+    }
+
+    .servicios .servicios-principales .item {
+        height: 25%;
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        
+        padding: 0;
+        transition: all 500ms ease-in-out ;
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+
+    .servicios .servicios-principales .item:nth-of-type(2) {
+        height: 35%;
+        border: none;
+        border-top: 0.5px solid var(--gray-loyal);
+        border-bottom: 0.5px solid var(--gray-loyal);
+    }
+
+    .servicios .servicios-principales .item:hover,
+    .servicios .servicios-principales .item:focus {
+        color: var(--green);
+        font-size: 0.65rem;
+        cursor:pointer;
+    }
+
+    .servicios .servicios-principales .item h1{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        line-height: 1.4;
+        font-weight: 800;
+        font-size: 0.7rem;
+       
+    }
+
+    .servicios .servicios-principales .item h1 i {
+        font-size: 1.9rem;
+        font-weight: 100;
+    }
+
+    /* #2 SERVICIOS INTRO */
+
+    .servicios .servicios-intro {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        gap:3rem;
+        margin-top:6rem;
+    }
+
+    .servicios .servicios-intro .title {
+        font-size:2.3rem;
+        text-align: center;
+        color: var(--blue-royal);
+        margin: 0;
+    }
+
+    .servicios .servicios-intro .subtitle {
+        font-size:1.2rem;
+        margin:0;
+        color: var(--gray-loyal);
+    }
+
+    .servicios .servicios-intro .servicios-content {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 0.5rem; 
+        width: 90vw !important;
+        gap:2rem; 
+    }
+
+    .servicios .servicios-intro .servicios-content .servicio {
+        width: 27.9%;
+        height: 15vh;
+        border-radius: 25px;
+        background-color: gray;
+        position: relative;
+        cursor:pointer;
+    }
+
+    .servicios .servicios-intro .servicios-content .servicio img {
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 25px;
+    }
+
+    .servicios .servicios-intro .servicios-content .servicio .mask {
+        width:100%;
+        height:100%;
+        border-radius: 25px;
+        background-color: white;
+        position: absolute;
+        top:0;
+        padding:0 1rem;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: all 1s ease-in-out;
+        border: 1px solid var(--blue-royal);
+        color: var(--blue-royal);
+    }
+
+    .servicios .servicios-intro .servicios-content .servicio .mask:hover {
+        background-color: var(--gray-loyal);
+        border: 1px solid var(--gray-loyal);
+    }
+
+    .servicios .servicios-intro .servicios-content .servicio .mask h3 {
+        font-size: 1.2rem;
+        line-height: 1;
+   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:1rem;
+        font-weight: 600;
+    }
+
+    .servicios .servicios-intro .servicios-content .servicio .mask h3 i {
+        line-height: 1.5;
+        font-size:2rem;
+    }
+
+    .servicios .servicios-intro .servicios-content .servicio .mask.active {
+        background-color: var(--blue-royal);
+        color: var(--white);
+    }
+
+     /* #3 SERVICIOS LIST */
+
+    .servicios .servicios-list {
+        width:  100%;
+      
+    }    
+
+    .servicios .servicios-list .panel {
+        width:100%;
+        min-height:100vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:2rem;
+  
+        
+    }
+    
+    .servicios .servicios-list .panel .panel-card {
+        width: 25%;
+        height: 350px;
+        box-shadow: var(--shadow);
+        background-color: white;
+        border-radius: 25px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0 0 0;
+        text-align: center;
+    }
+
+    .servicios .servicios-list .panel .panel-card img {
+        display: block;
+        height: 170px;
+        width: 170px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+
+    .servicios .servicios-list .panel .panel-card h1,
+    .servicios .servicios-list .panel .panel-card p {
+        margin:0;
+        padding:0;
+    }
+
+    .servicios .servicios-list .panel .panel-card h1 {
+        letter-spacing: 0.2rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--blue-royal);
+        text-transform: uppercase;
+    }
+
+    .servicios .servicios-list .panel .panel-card p {
+        font-size: 0.8rem;
+        color: var(--gray-dark);
+        padding: 0 1rem;
+    }
+
+    .servicios .servicios-list .panel .panel-card .buttom {
+        border:none;
+        display: block;
+        width: 50%;
+        border-top-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        padding: 0.8rem;
+        cursor:pointer;
+        background-color: var(--green);
+        color: white;
+        font-weight: bold;
+        font-size: 0.8rem;
+        transition: background-color 500ms ease-in-out;
+        align-self: flex-end;
+        text-transform: capitalize;
+    }
+
+    .servicios .servicios-list .panel .panel-card .buttom:hover {
+        background-color: var(--gray-loyal);
+    }
+
+    /*****************************************
+        Bannner
+    *****************************************/
+
+    .banner {
+    
+        padding: 0 1rem;
+        grid-area: banner;
+        background-image: linear-gradient( 108.1deg, rgba(25,74,141,1) 25.9%, rgba(151,230,194,1) 112.2% );
+        background-image:  linear-gradient( 111deg, rgba(33,251,94,1) 1.7%, rgba(25,74,141,1) 104.4% );
+    }
+
+    .banner-content {
+        height:100%;
+        width: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+        font-weight: 400;
+        color:white;
+    }
+
+    /*****************************************
+        Noticias
+    *****************************************/
+
+    .noticias {
+        grid-area: noticias;
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        padding:3rem 0;
+        gap: 1rem;
+        background-color: rgb(253,253,255);
+    }
+
+    .noticias .noticias-intro {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding:1rem 0;
+        width:100%;
+
+        margin-top: 3rem;
+    }
+
+    .noticias .noticias-intro .title {
+        font-size:2.3rem;
+        text-align: center;
+        color: var(--blue-royal);
+        margin: 0 0 0.8rem 0;
+        line-height: 0.9;   
+    }
+
+    .noticias .noticias-intro .subtitle {
+        margin:0;
+        color: var(--gray-loyal);
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Noticias Content */
+
+    .noticias .noticias-content {
+        width: 80%;
+        padding: 1rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .noticias .noticias-content .noticia {
+        height: 60vh;
+        width: 30%;
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: var(--shadow);
+    }
+
+    .noticias .noticias-content .noticia:hover {
+        background-color: var(--gray-light);
+        cursor:pointer;
+    }
+
+    .noticias .noticias-content .noticia img {
+        display:block;
+        width:100%;
+        height:60%;
+        object-fit: cover;
+        object-position: center;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+
+    .noticias .noticias-content .noticia .content {
+        padding: 1rem 1rem 2rem 1rem; 
+    }
+
+    .noticias .noticias-content .noticia .content h1, p {
+        padding:0;
+        margin:0;
+    }
+    
+    .noticias .noticias-content .noticia .content h1 {
+        font-size: 1.3rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        min-width: 200px;
+        max-width: 300px;
+        line-height: 2;
+        color: var(--blue-royal);
+    }
+
+    .noticias .noticias-content .noticia .content p {
+        color: var(--gray-loyal);
+        font-size: 0.9rem;
+    }
+    
+  /*****************************************
+        Certificaciones
+    *****************************************/
+
+    .certificaciones {
+        grid-area: certificaciones;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7rem;
+        flex-wrap: wrap;
+        padding: 2rem;
+        background-color: rgb(253,253,255);
+        border-bottom: 2px solid var(--gray-light);
+   
+    }
+
+    .certificaciones .item{
+        width: 120px;
+        height: 140px;
+        
+    }
+
+    .certificaciones .item img {
+        width: 100%;
+        height: 100%;
+        
+    }
+
+        /*****************************************
+        Footer
+    *****************************************/
+
+    .footer {
+        grid-area: footer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: rgb(253,253,255);
+        padding: 0;
+ 
+    }
+
+    .footer .autor {
+        text-align: center;
+        width:100%;
+    }
+
+    .footer .autor h1 {
+        font-size: 1.2rem;
+        padding:0;
+        color:var(--midnight);
+        margin:1rem 0 0 0;
+    }
+
+    .footer .autor p {
+        margin-top:0.1rem;
+        font-size: 0.9rem;
+        color: var(--gray-dark);
+        font-weight: bold;
+    }
+
+}
