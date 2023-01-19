@@ -7,7 +7,7 @@ Live Demo: https://eifhen.github.io/Template08/
 
 Tecnologías utilizadas:
 
--HTML5
--CSS3
--Javascript
+# HTML5
+# CSS3
+# Javascript
   -SplideJS (https://splidejs.com)
