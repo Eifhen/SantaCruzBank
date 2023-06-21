@@ -2,7 +2,7 @@
 
 Página/Diseño de prueba para el Banco Santa Cruz
 
-Live Demo: https://eifhen.github.io/Template08/
+Live Demo: https://eifhen.github.io/SantaCruzBank/
 
 
 Tecnologías utilizadas:
